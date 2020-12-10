@@ -63,10 +63,12 @@ namespace WebApplication3
                 options.SignedOutRedirectUri = "https://localhost:44376/";
                 options.TokenValidationParameters.NameClaimType = "name";
             })
+            //.AddCookie();
             .AddCookie(config =>
             {
-                config.Cookie.Name = "UserLoginCookie";
-                config.LoginPath = "/Login/UserLogin";
+                //config.Cookie.Name = "UserLoginCookie";
+                //config.LoginPath = "/Login/UserLogin";
+                config.LoginPath = "/auth/login";
             });
 
             services.AddControllersWithViews();
